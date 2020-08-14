@@ -1,0 +1,15 @@
+body {
+    background-color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1, h2, h3 {
+    color: #140087
+}
+a.link {#adff2f
+    color: greenyellow
+}
+p#par {
+    font-style: italic;
+    font-size: 18px;
+    border: 1px dashed #e1e1e1;
+}
