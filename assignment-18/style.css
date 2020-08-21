@@ -1,0 +1,72 @@
+.cirkel__element {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  top: 150px;
+  left: 50px;
+}
+
+.blok__element {
+  width: 200px;
+  height: 200px;
+  background: purple;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid purple;
+}
+
+body {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.blok__element--modifier {
+  background: white;
+  width: 200px;
+  height: 200px;
+  background: purple;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid purple;
+}
+
+.cirkel__element--modifier {
+  background: purple;
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  top: 150px;
+  left: 50px;
+}
+/*# sourceMappingURL=style.css.map */
