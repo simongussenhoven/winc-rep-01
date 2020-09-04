@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Practice JavaScript Menu</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="body">
+    <div id="container" class="defaultcolor">
+        <nav class="nav">
+            <div id="hoverbutton" class="hoverable"></div>
+            <ul>
+                <li><a href="#"></a>Home</li>
+                <li><a href="#"></a>Whatever</li>
+                <li><a href="#"></a>Unimportant</li>
+                <li><a href="#"></a>Pricing</li>
+                <li><a href="#"></a>Sales</li>
+            </ul>
+        </nav>
+        <div id="maincontainer">
+            <aside>
+                <div id="sidemenu" class="hidden hoverable">
+                    <form id="colorform">
+                        <div class="green">
+                            <input type="radio" id="green" name="color" value="green">
+                            <label for="green">Green</label>
+                        </div>
+                        <div class="red">
+                            <input type="radio" id="red" name="color" value="red">
+                            <label for="red">Red</label>
+                        </div>
+                        <div class="yellow">
+                            <input type="radio" id="yellow" name="color" value="yellow">
+                            <label for="yellow">Yellow</label>
+                        </div>
+                    </form>
+                </div>
+            </aside>
+
+            <main>
+                <h1>The color of this page is <span id="colorexpression">black</span></h1>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
