@@ -1,0 +1,106 @@
+body {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0px;
+  background: #020024;
+  background: -webkit-gradient(linear, left top, right top, from(#020024), color-stop(50%, #097961), to(#00d4ff));
+  background: linear-gradient(90deg, #020024 0%, #097961 50%, #00d4ff 100%);
+}
+
+header {
+  padding: 20px 30px 20px 30px;
+  margin: 0px;
+}
+
+header .h1 {
+  font-size: 40px;
+  margin-bottom: 0px;
+}
+
+.header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: around;
+      -ms-flex-pack: around;
+          justify-content: around;
+}
+
+menu {
+  color: white !important;
+  margin-top: 0px;
+}
+
+menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0px;
+  padding-left: 10px;
+}
+
+menu ul li {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+menu ul li a {
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  -webkit-transition: all ease-in-out .5s;
+  transition: all ease-in-out .5s;
+}
+
+menu ul li a:hover {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transform: translate(5px, 0);
+          transform: translate(5px, 0);
+}
+
+h1 {
+  margin-top: 0px;
+  font-size: 30px;
+  margin-bottom: 0px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+section {
+  padding: 20px 30px 20px 30px;
+}
+
+footer {
+  padding: 20px 30px 20px 30px;
+  margin: 0px;
+  position: absolute;
+  bottom: 0px;
+}
+
+.active {
+  border-bottom: 1px solid white;
+}
+
+code {
+  font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
+  font-size: 16px;
+  background-blend-mode: darken;
+}
+/*# sourceMappingURL=style.css.map */
