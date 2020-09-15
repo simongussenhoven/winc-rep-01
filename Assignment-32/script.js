@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let radios = document.getElementById('colorform');
     let container = document.getElementById('container');
     let colorExpression = document.getElementById('colorexpression');
-    let input = document.querySelector('input');
 
     hoverButton.addEventListener('click', function () {
         sideMenu.className = 'visible';
