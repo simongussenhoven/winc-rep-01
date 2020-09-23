@@ -1,6 +1,6 @@
 body {
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 0px;
   background: #020024;
   background: -webkit-gradient(linear, left top, right top, from(#020024), color-stop(50%, #097961), to(#00d4ff));
@@ -35,6 +35,10 @@ header .h1 {
   text-decoration: none;
 }
 
+.header__container:hover {
+  text-decoration: underline;
+}
+
 menu {
   color: white !important;
   margin-top: 0px;
@@ -66,8 +70,8 @@ menu ul li a {
   padding: 15px;
   color: white;
   text-decoration: none;
-  -webkit-transition: all ease-in-out .5s;
-  transition: all ease-in-out .5s;
+  -webkit-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
 }
 
 menu ul li a:hover {
@@ -104,7 +108,7 @@ footer {
 }
 
 code {
-  font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, sans-serif;
   font-size: 16px;
   background-blend-mode: darken;
 }

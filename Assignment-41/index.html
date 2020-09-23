@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmzoeker</title>
+    <script defer src="moviedb.js"></script>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Filmzoeker 2000+ Pro Slim Light Edition</h1>
+    </header>
+
+    <nav>
+        <div id="listcontainer">
+            <form>
+                <input class="button" type="radio" id="latest" name="movies" value="latest">
+                <label for="latest">Later than 2014</label><br>
+                <input class="button" type="radio" id="avengers" name="movies" value="avengers">
+                <label for="avengers">Avengers</label><br>
+                <input class="button" type="radio" id="xmen" name="movies" value="xmen">
+                <label for="xmen">X-Men</label><br>
+                <input class="button" type="radio" id="princess" name="movies" value="princess">
+                <label for="princess">Princess</label>
+                <input class="button" type="radio" id="batman" name="movies" value="batman">
+                <label for="batman">Batman</label><br>
+            </form>
+        </div>
+    </nav>
+    <main>
+        <ul id="movielist">
+            <!--Fill this with JS-->
+        </ul>
+    </main>
+
+
+</body>
+
+</html>
