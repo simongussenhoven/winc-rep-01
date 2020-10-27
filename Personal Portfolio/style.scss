@@ -61,6 +61,7 @@ h1 {
 h2 {
     font-size: 20px;
     margin-top: 0px;
+    margin-bottom: 5px;
 }
 section {
     padding: 20px 30px 20px 30px;
@@ -74,9 +75,23 @@ footer {
 .active {
     border-bottom: 1px solid white;
 }
-code {
-    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
+
+.codeblock {
+    display: flex;
+    flex-wrap: wrap;
+    span {
+        padding: 2px;
+        margin: 2px;
+        
+    }
+    code {
+        font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
         Courier New, monospace, sans-serif;
-    font-size: 16px;
-    background-blend-mode: darken;
+        padding: 2px;
+        margin: 2px;
+        background-color: lightgray;
+        color: black;
+        border-radius: 3px;
+        padding: 1px;
+    }
 }

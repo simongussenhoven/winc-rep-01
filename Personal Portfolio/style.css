@@ -84,12 +84,13 @@ menu ul li a:hover {
 h1 {
   margin-top: 0px;
   font-size: 30px;
-  margin-bottom: 0px;
+  margin-bottom: 30px;
 }
 
 h2 {
   font-size: 20px;
   margin-top: 0px;
+  margin-bottom: 5px;
 }
 
 section {
@@ -107,9 +108,27 @@ footer {
   border-bottom: 1px solid white;
 }
 
-code {
-  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, sans-serif;
-  font-size: 16px;
-  background-blend-mode: darken;
+.codeblock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.codeblock span {
+  padding: 2px;
+  margin: 2px;
+}
+
+.codeblock code {
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
+ Courier New, monospace, sans-serif;
+  padding: 2px;
+  margin: 2px;
+  background-color: lightgray;
+  color: black;
+  border-radius: 3px;
+  padding: 1px;
 }
 /*# sourceMappingURL=style.css.map */

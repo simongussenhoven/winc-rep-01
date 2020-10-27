@@ -3,40 +3,50 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
     <title>Simon's Personal Codig Assistant</title>
-    <script type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
     <header>
-        <div class="header__container">
+
+        <div class="header-container">
             <h1>MY PERSONAL CODING ASSISTANT</h1>
-            <h2>JUST TO HELP ME CODE</h2>
+            <h2>HELPING ME CODE SINCE 2020</h2>
             <p>This page is only here to help me code while moving forward during my eductation. Do you like this page?
-                Please
-                consider <a href="#">donating.</a></p>
+                Please consider <a href="#">donating.</a></p>
         </div>
     </header>
 
     <menu>
         <ul class="__ul">
-            <li class="__list-item"><a class="__link" href="index.html">HTML</a></li>
-            <li class="__list-item"><a class="__link" href="css.html">CSS</a></li>
-            <li class="__list-item"><a class="__link" href="js.html">JavaScript</a></li>
-            <li class="__list-item"><a class="__link" href="command">Commandline</a></li>
+            <li class="__list-item"><a class="__link html" href="html.html">HTML</a></li>
+            <li class="__list-item"><a class="__link css" href="css.html">CSS</a></li>
+            <li class="__list-item"><a class="__link javascript" href="js.html">JavaScript</a></li>
+            <li class="__list-item"><a class="__link commandline" href="cmd.html">Commandline</a></li>
         </ul>
     </menu>
     <main>
-        <section>
+        <section class="css">
             <h1 class="mainheader">CSS Cheatsheet</h1>
+            <div class="codeblock">
+                <span class="title">Including in your HTML: </span>
+                <code>&#60;link rel="stylesheet" type="text/css" href="/style.css"/&#62;</code>
+            </div>
+            <h3></h3>
+            <div class="codeblock">
+                <span class="title">Including in your HTML: </span>
+                <code>&#60;link rel="stylesheet" type="text/css" href="/style.css"/&#62;</code>
+            </div>
         </section>
     </main>
     <footer>
-        <p>Copyright</p>
+        <p>Copyright Simon Gussenhoven 2020</p>
     </footer>
 </body>
 
