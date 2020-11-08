@@ -84,7 +84,7 @@ menu ul li a:hover {
 h1 {
   margin-top: 0px;
   font-size: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 
 h2 {
@@ -122,8 +122,7 @@ footer {
 }
 
 .codeblock code {
-  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
- Courier New, monospace, sans-serif;
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, sans-serif;
   padding: 2px;
   margin: 2px;
   background-color: lightgray;
