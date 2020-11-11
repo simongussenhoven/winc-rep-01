@@ -1,42 +1,53 @@
-
-//current date
-
-
-//convert to date object
-const convertedExpirationDate = (date) => {
+//convert passed date to date object
+const convertExpirationDate = (date) => {
     const splitDate = date.split("/");
     const month = parseInt((splitDate[0] - 1));
     const year = parseInt(`20${splitDate[1]}`);
     const newDate = new Date(year, month, 1, 12);
-    return newDate;
+    return newDate.getTime();
 }
 
-const willExpire = (date) => {
-    const currentDate = new Date()
-    if (
-        convertedExpirationDate(date) > currentDate &&
-        convertedExpirationDate(date).getFullYear() < currentDate.getFullYear() + 1
-    ) {
-        return true
-    }
-    else {
-        return false
-    }
+//create a sorted object
+const sortablePersonData = (array) => {
+    const sortablePersonData =[];
+    array.map(item => {
+        sortablePersonData.push(item.credit_card.expiration,getTime())
+        )
+    })
+    return sortablePersonData.sort()
 }
+sortablePersonData(randomPersonData)
 
-console.log(willExpire("10/21"))
-
-    //create array to call
-
-//     const createCallables = () => {
-//         const callables = [] //all people to be called
-//         randomPersonData.forEach(person => {
-//             if (
-//                 person.age <= 18 &&
-//                 toExpire(person.credit_card.expiration) = true &&
-//         ){
-//             return true
-//         }
-//     else {
-//     return false
+// //compare passed date with current date
+// const willExpire = (date) => {
+//     const currentDate =  Date.now()
+//     let convertedDate = convertedExpirationDate(date);
+//     const oneYear = 31536000000;
+//     if (date > currentDate && date < currentDate + oneYear) 
+//     {return true}
+//     else 
+//     {return false}
 // }
+
+//create array to call
+// const callablePersons = []
+// const createCallables = () => {
+//     randomPersonData.map(person => {
+//         callablePerson = []
+//         if(willExpire(person.credit_card.expiration) && person.age >= 18){
+//             callablePerson.push(
+//                 `Full name: ${person.name} ${person.surname}<br/>
+//                 Phonenumber: ${person.phone}<br/>
+//                 Creditcard number: ${person.credit_card.number} <br/>
+//                 Expirationdate: ${person.credit_card.expiration}<br/>
+//                 `
+//             )
+//             callablePersons.push(callablePerson)
+//             }
+//         else {
+//             //do nothing
+//         }
+//     })
+// }
+
+// createCallables()
