@@ -21,5 +21,5 @@ button1.addEventListener("click", () => {
 
 const button2 = document.getElementById('button2');
 button2.addEventListener("click", () => {
-    createDomList(callablePersons, 'callablepersons', 'Volwassenen waarvan de creditcard verloopt')
+    createDomList(returnList(), 'callablepersons')
 });
