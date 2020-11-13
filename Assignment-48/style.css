@@ -1,0 +1,111 @@
+body {
+  background: #332dfd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 55px;
+  margin: 10px;
+}
+
+button {
+  width: 200px;
+  height: 50px;
+  margin: 10px;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+}
+
+button:hover {
+  cursor: pointer;
+  width: 250px;
+}
+
+#container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#container p {
+  font-size: 100px;
+}
+
+#jokecontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 75%;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+#jokecontainer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#jokecontainer ul li {
+  margin-bottom: 20px;
+  list-style: none;
+}
+
+input#input {
+  width: 400px;
+  height: 50px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+input#submit {
+  height: 56px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+input#submit:hover {
+  cursor: pointer;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=style.css.map */
