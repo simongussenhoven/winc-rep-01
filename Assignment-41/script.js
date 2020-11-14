@@ -33,7 +33,7 @@ addMoviesTodDom(movies);
 
 //vind buttons
 const buttonList = Array.from(document.getElementsByClassName('button'));
-//console.log('dit zijn de buttons:', buttonList)
+console.log('dit zijn de buttons:', buttonList)
 
 //eventListeners
 buttonList.forEach((button) => {
