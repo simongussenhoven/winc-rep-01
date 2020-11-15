@@ -23,15 +23,15 @@ const createItem = (element, createdByUser) => {
     //create needed items
     const form = document.createElement('form');
     const checkbox = document.createElement('input');
-    makeStatusUpdatable(checkbox)
+    makeStatusUpdatable(checkbox);
     const textinput = document.createElement('input');
 
     //call function on textinput to create functionality to the textfield
-    makeValueUpdatable(textinput)
+    makeValueUpdatable(textinput);
     const image = document.createElement('img');
 
     //add eventlistener for deleting items
-    makeDeletable(image)
+    makeDeletable(image);
 
     //create a new form with elements, if a single item is added, add it as first child
     if (createdByUser) {
@@ -69,13 +69,17 @@ const createItem = (element, createdByUser) => {
 //add functionality to input form
 const form = document.getElementById('topinput');
 form.addEventListener("submit", (e) => {
-    let input = form.input.value;
+    //create object from input, so DOM element can be create before getting an ID back
+    let input = {
+        description: form.input.value
+    }
     if (input !== '') {
+        const createdByUser = true;
+        createItem(input, createdByUser);
         const awaitServer = async () => {
-            const returnedData = await postData(input);
+            const returnedData = await postData(input.description);
             try {
-                const createdByUser = true;
-                createItem(returnedData, createdByUser);
+                container.firstChild.setAttribute("id", returnedData._id)
             }
             catch (error) {
                 console.log(error)
@@ -83,7 +87,6 @@ form.addEventListener("submit", (e) => {
         }
         awaitServer()
         form.input.value = ''
-
     }
     else {
         alert(`Can't add empty task`)
@@ -94,7 +97,7 @@ form.addEventListener("submit", (e) => {
 //create function to delete the item
 const makeDeletable = (image) => {
     image.addEventListener("click", () => {
-        deleteData(image.parentNode.id)
+        deleteData(image.parentNode.id);
         image.parentNode.parentNode.removeChild(image.parentNode);
     })
 }
@@ -110,13 +113,13 @@ const makeStatusUpdatable = (box) => {
 
         //add strike class to sibling
         if (box.checked) {
-            box.nextSibling.classList.add("striked")
+            box.nextSibling.classList.add("striked");
         } else {
-            box.nextSibling.classList.remove("striked")
+            box.nextSibling.classList.remove("striked");
         }
 
         //perform API update
-        putCheckbox(id, value, status)
+        putCheckbox(id, value, status);
     })
 }
 
@@ -129,6 +132,7 @@ const makeValueUpdatable = (text) => {
         status = text.previousSibling.checked;
 
         //perform API update
-        putCheckbox(id, value, status)
+        putCheckbox(id, value, status);
     })
 }
+

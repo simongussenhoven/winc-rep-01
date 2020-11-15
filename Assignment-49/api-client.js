@@ -29,7 +29,7 @@ const postData = async (data) => {
     })
         .then(response => response.json())
         .catch(error => console.log(error + "error"))
-    // console.log(`Item "${result.description}" created`)
+    console.log(`Item "${result.description}" created`)
     return result
 }
 
