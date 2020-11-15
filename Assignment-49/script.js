@@ -1,116 +1,133 @@
-//maak lijstje in array door populate aan te roepen
-const createlist = async () => {
-    const data = await getData()
-    try {
-        populateList(data)
-        createDeleteFunction()
-        createAddFunction()
-        createUpdateStatus()
-        createUpdateValue()
-    }
-    catch (error) {
-        console.log(error + 'error!')
-    }
-}
 
-createlist()
 
-//stop alle data in een lijst met bijbehorende elementen
+//Use this in several functions so declare here
 const container = document.getElementById('todolist')
 
-const populateList = (list) => {
-    container.innerHTML = '';
-    list.forEach(element => {
-        //how to create
-        const form = document.createElement('form');
-        const label1 = document.createElement('label');
-        const label2 = document.createElement('label');
-        const checkbox = document.createElement('input');
-        const textinput = document.createElement('input');
-        const image = document.createElement('img');
-
-        //create a new form with id
-        container.appendChild(form);
-        form.setAttribute("class", "inputform")
-        form.appendChild(checkbox)
-        form.setAttribute("id", element._id)
-        checkbox.setAttribute("type", "checkbox")
-        if (element.done == "true") {
-            checkbox.setAttribute("checked", "checked")
-        }
-        checkbox.setAttribute("class", "checkbox")
-        form.appendChild(textinput)
-        textinput.setAttribute("type", "text")
-        textinput.setAttribute("value", element.description)
-        textinput.setAttribute("class", "text")
-        if (textinput.previousSibling.checked) {
-            textinput.classList.add("striked")
-        }
-
-        form.appendChild(image)
-        image.src = "delete.png"
-        image.setAttribute("class", "delete")
-    })
-}
-
-//create function to delete items
-const createDeleteFunction = () => {
-    const buttonList = Array.from(document.getElementsByClassName('delete'));
-    buttonList.forEach(button => {
-        button.addEventListener('click', () => {
-            deleteData(button.parentNode.id);
+//create listitem in dom for each item in data list, create delete and update function afterwards
+const populateList = async () => {
+    dataList = await getData();
+    try {
+        dataList.forEach(element => {
+            createItem(element);
         })
-    })
+    }
+    catch {
+        alert("Error creating list from data")
+    }
+}
+populateList()
+
+//function to create new single item
+const createItem = (element, createdByUser) => {
+
+    //create needed items
+    const form = document.createElement('form');
+    const checkbox = document.createElement('input');
+    makeStatusUpdatable(checkbox)
+    const textinput = document.createElement('input');
+
+    //call function on textinput to create functionality to the textfield
+    makeValueUpdatable(textinput)
+    const image = document.createElement('img');
+
+    //add eventlistener for deleting items
+    makeDeletable(image)
+
+    //create a new form with elements, if a single item is added, add it as first child
+    if (createdByUser) {
+        container.prepend(form);
+    }
+    else {
+        container.appendChild(form);
+    }
+    form.setAttribute("class", "inputform");
+    form.appendChild(checkbox);
+    form.setAttribute("id", element._id);
+
+    //create checkbox and set checkbox to checked if status is done
+    checkbox.setAttribute("type", "checkbox");
+    if (element.done == "true") {
+        checkbox.setAttribute("checked", "checked");
+    }
+    checkbox.setAttribute("class", "checkbox");
+
+    //add text input and strike if checkbox is status is done
+    form.appendChild(textinput);
+    textinput.setAttribute("type", "text");
+    textinput.setAttribute("value", element.description);
+    textinput.setAttribute("class", "text");
+    if (element.done == "true") {
+        textinput.classList.add("striked");
+    }
+
+
+    form.appendChild(image);
+    image.src = "delete.png";
+    image.setAttribute("class", "delete");
 }
 
-//create function to add items
-const createAddFunction = () => {
-    const form = document.getElementById('inputform');
-    form.addEventListener("submit", (e) => {
-        if (form.input.value !== '') {
-            postData(form.input.value);
+//add functionality to input form
+const form = document.getElementById('topinput');
+form.addEventListener("submit", (e) => {
+    let input = form.input.value;
+    if (input !== '') {
+        const awaitServer = async () => {
+            const returnedData = await postData(input);
+            try {
+                const createdByUser = true;
+                createItem(returnedData, createdByUser);
+            }
+            catch (error) {
+                console.log(error)
+            }
         }
-        else {
-            alert(`Can't add empty task`)
-        }
+        awaitServer()
+        form.input.value = ''
         e.preventDefault();
+    }
+    else {
+        alert(`Can't add empty task`)
+    }
+})
+
+//create function to delete the item
+const makeDeletable = (image) => {
+    image.addEventListener("click", () => {
+        deleteData(image.parentNode.id)
+        image.parentNode.parentNode.removeChild(image.parentNode);
     })
 }
 
 //create function to update status
-const createUpdateStatus = () => {
-    const checkboxes = Array.from(document.getElementsByClassName('checkbox'));
-    checkboxes.forEach(box => {
-        box.addEventListener("change", () => {
+const makeStatusUpdatable = (box) => {
+    box.addEventListener("change", () => {
 
-            //define variables in function
-            id = box.parentNode.id;
-            value = box.nextSibling.value;
-            status = box.checked;
+        //define variables in function
+        id = box.parentNode.id;
+        value = box.nextSibling.value;
+        status = box.checked;
 
-            //add strike class
-            if (box.checked) {
-                box.nextSibling.classList.add("striked")
-            } else {
-                box.nextSibling.classList.remove("striked")
-            }
+        //add strike class to sibling
+        if (box.checked) {
+            box.nextSibling.classList.add("striked")
+        } else {
+            box.nextSibling.classList.remove("striked")
+        }
 
-            //perform API update
-            putCheckbox(id, value, status)
-        })
+        //perform API update
+        putCheckbox(id, value, status)
     })
 }
 
 //create function for updating task value
-const createUpdateValue = () => {
-    const textList = Array.from(document.getElementsByClassName("text"));
-    textList.forEach(text => {
-        text.addEventListener("change", () => {
-            id = text.parentNode.id;
-            value = text.value;
-            status = text.previousSibling.checked;
-            putCheckbox(id, value, status)
-        })
+const makeValueUpdatable = (text) => {
+    text.addEventListener("change", () => {
+        //get variables
+        id = text.parentNode.id;
+        value = text.value;
+        status = text.previousSibling.checked;
 
+        //perform API update
+        putCheckbox(id, value, status)
     })
 }
