@@ -83,11 +83,12 @@ form.addEventListener("submit", (e) => {
         }
         awaitServer()
         form.input.value = ''
-        e.preventDefault();
+
     }
     else {
         alert(`Can't add empty task`)
     }
+    e.preventDefault();
 })
 
 //create function to delete the item
