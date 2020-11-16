@@ -1,11 +1,11 @@
-const baseUrl = 'https://jsonbox.io/box_f7adf92089a1ced936ae'
+const baseUrl = 'https://jsonbox.io/box_a7991348586edf19dc69'
 
 //getting data from server
 const getData = async () => {
     const result = await fetch(baseUrl, { method: "GET" })
         .then(response => response.json())
         .catch(error => console.log(error + "error"))
-    console.log("list created")
+
     return result
 }
 
@@ -17,7 +17,6 @@ const deleteData = async (data) => {
     })
         .then(response => response.json())
         .catch(error => console.log(error + "error"))
-    console.log(result)
 }
 
 //posting new element
@@ -29,7 +28,6 @@ const postData = async (data) => {
     })
         .then(response => response.json())
         .catch(error => console.log(error + "error"))
-    console.log(`Item "${result.description}" created`)
     return result
 }
 
@@ -42,5 +40,4 @@ const putCheckbox = async (id, data, status) => {
     })
         .then(response => response.json())
         .catch(error => console.log(error + "error"))
-    console.log(result)
 }

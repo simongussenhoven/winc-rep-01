@@ -11,8 +11,8 @@ const populateList = async () => {
             createItem(element);
         })
     }
-    catch {
-        alert("Error creating list from data")
+    catch (error) {
+        alert(error)
     }
 }
 populateList()
@@ -73,7 +73,10 @@ form.addEventListener("submit", (e) => {
     let input = {
         description: form.input.value
     }
-    if (input !== '') {
+    if (input.description !== '') {
+        //play write audio
+        const audio = new Audio('write.mp3');
+        audio.play();
         const createdByUser = true;
         createItem(input, createdByUser);
         const awaitServer = async () => {
@@ -97,6 +100,8 @@ form.addEventListener("submit", (e) => {
 //create function to delete the item
 const makeDeletable = (image) => {
     image.addEventListener("click", () => {
+        const audio = new Audio('trash.mp3');
+        audio.play();
         deleteData(image.parentNode.id);
         image.parentNode.parentNode.removeChild(image.parentNode);
     })
@@ -105,7 +110,8 @@ const makeDeletable = (image) => {
 //create function to update status
 const makeStatusUpdatable = (box) => {
     box.addEventListener("change", () => {
-
+        const audio = new Audio('scratch.mp3');
+        audio.play();
         //define variables in function
         id = box.parentNode.id;
         value = box.nextSibling.value;
@@ -126,6 +132,9 @@ const makeStatusUpdatable = (box) => {
 //create function for updating task value
 const makeValueUpdatable = (text) => {
     text.addEventListener("change", () => {
+        const audio = new Audio('write.mp3');
+        audio.play();
+
         //get variables
         id = text.parentNode.id;
         value = text.value;
