@@ -1,0 +1,49 @@
+a.google {
+    font-size: 24px;
+}
+a.google:hover {
+    color: lightblue;
+    font-weight: bold;
+
+}
+a.google2 {
+    font-size: 24px;
+}
+a.google2:active {
+    color: red;
+    font-style: italic;
+
+}
+a.google3 {
+    font-size: 24px;
+}
+a.google2:visited {
+    color: yellow;
+    font-style: italic;
+
+}
+input.input1:focus {
+    font-size: 20px;
+    color: green;
+}
+.menu {
+    display: flex;
+    list-style: none;
+    background-color: darkblue;
+    color: white;
+}
+.menu li {
+    border: 1px solid;
+    padding: 10px;
+    margin: 20px 20px 20px 0px;
+}
+.menu li.currentpage {
+    background-color: #cbe2eb
+}
+.menu li:hover {
+    background-color: lightblue;
+}
+.menu li input:focus {
+    border-color: aquamarine;
+
+}

@@ -1,7 +1,10 @@
-const type = "single"
-
-const log = (text) => {
-    console.log(text)
+const list = {
+    items: [
+        { id: 1, title: "Appels" },
+        { id: 2, title: "Pak melk" }
+    ]
 }
 
-log("type")
+list.items.map(item => {
+    console.log(item)
+})

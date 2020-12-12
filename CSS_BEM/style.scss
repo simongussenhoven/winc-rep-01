@@ -1,0 +1,61 @@
+
+@mixin purple {
+background: purple;    
+}
+@mixin white {
+    background: white;    
+}
+@mixin back-to-white-cirkel {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    position: relative;
+    top: 150px;
+    left: 50px;
+}
+@mixin back-to-purple-blok {
+    width: 200px;
+    height: 200px;
+    background: purple;
+    align-items: center;
+    display: flex;
+    border: 1px solid purple;
+}
+
+.cirkel__element {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    position: relative;
+    top: 150px;
+    left: 50px;
+  }
+  .blok__element {
+    width: 200px;
+    height: 200px;
+    background: purple;
+    align-items: center;
+    display: flex;
+    border: 1px solid purple;
+  }
+  
+  body {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .blok__element--modifier {
+    @include white;
+    @include back-to-purple-blok;
+  }
+  .cirkel__element--modifier {
+    @include purple;
+    @include back-to-white-cirkel;
+}
