@@ -1,10 +1,4 @@
-const list = {
-    items: [
-        { id: 1, title: "Appels" },
-        { id: 2, title: "Pak melk" }
-    ]
-}
+const no = undefined;
+const ye = 1;
 
-list.items.map(item => {
-    console.log(item)
-})
+console.log(ye < no)
